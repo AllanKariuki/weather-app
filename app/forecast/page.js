@@ -1,21 +1,7 @@
-import React, { useEffect } from 'react'
 import Image from 'next/image'
 import sun from '../../public/sunny-icon-0.png'
-import { useSelector, useDispatch } from 'react-redux'
-import { fetchWeather } from '../features/weather/weatherSlice'
 
 const page = () => {
-
-  const dispatch = useDispatch()
-  const { weather, isLoading, isError, message } = useSelector((state) => state.weatherResult)
-
-  useEffect(()=> {
-    if(isError) {
-      // console.log(message)
-    }
-    dispatch(fetchWeather())
-  })
-
   return (
     <div className='items-center justify-center md:ml-10'>
         <div className='container mx-auto flex flex-row justify-center space-between text-white'>
